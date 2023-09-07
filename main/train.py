@@ -66,8 +66,6 @@ if __name__ == '__main__':
     train_loader, valid_loader = getdataloaders(dataset_train, dataset_valid)
 
     device = ('cuda' if torch.cuda.is_available() else 'cpu')
-
-    # Load the model.
     model = build_model(
         weights=torchvision.models.EfficientNet_B1_Weights.IMAGENET1K_V1,
         fine_tune=True, 
@@ -85,9 +83,9 @@ if __name__ == '__main__':
                                                 optimizer, criterion)
         valid_epoch_loss, valid_epoch_acc = validate(model, valid_loader,  
                                                     criterion, dataset_classes)
-       
+        #fallback for hardware failure
+        if epoch %3 == 0:
+                torch.save(model, f"./models/models{epoch}.pth")
         time.sleep(2)
-    model.save()
-    # Save the trained model weights.
-    # Save the loss and accuracy plots.
+    torch.save(model, f"./models/models{epoch}.pth")
     print('TRAINING COMPLETE')

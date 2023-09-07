@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<style>
+.header{
+    display:flex;
+    background-color:#903749;
+    padding-bottom: 25px;
+}
+body{
+    margin: 0;
+    background-color:#903749
+}
+
+.content{
+    color:white;
+}
+
+.dir{
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+
+.check{
+    padding-left: 10px;
+    font-size: 40px;
+
+}
+
+.check::file-selector-button {
+  border: 2px solid #903749;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: gray;
+  transition: 1s;
+  color: white;
+}
+
+
+
+.foot{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    border-color: white;
+    
+    position: fixed;
+  bottom: 0;
+  right: 10px;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 50px;
+}
+
+.upload{
+    border: 2px solid #903749;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: gray;
+    color: white;
+    font-size: 45px;
+}
+
+#c{
+    text-align-last: center;
+}
+
+#b{
+    padding-bottom: 30px;
+    border-radius: 50px;
+    height: 242px;
+    width: 400px;
+}
+</style>
+
+
+<html>
+    <body>
+        <div class="header">
+            <img src="c:\Users\Manjot Singh\Downloads\Color logo with background.png">
+        </div>
+        <div class="content">
+                <div id="c">
+                    <input id="imgInp" class="check" type="file" accept="image/jpeg" />
+                </div>
+                <p class="dir">Upload a photo of a car (.JPG)</p>
+                <div id="c">
+                    <img id="b" src="#" alt="your image"  onerror="this.onerror=null; this.src='c:/Users/Manjot Singh/Downloads/pngegg.png'"/>
+                </div>
+                <div id="c">
+                    <button class="upload"> Classify </button>
+                </div>
+        </div>
+
+        <div>
+            <p class="foot">About</p> 
+        </div>
+    <script>
+        
+        imgInp.onchange = evt => {
+            const [file] = imgInp.files
+            if (file) {
+                b.src = URL.createObjectURL(file)
+                    }
+        }
+    </script>
+    </body>
+</html>

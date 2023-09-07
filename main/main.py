@@ -9,7 +9,7 @@ model = build_model(
         fine_tune=True, 
         num_classes=196
     )
-checkpoint=torch.load('./outputs/model.pth')
+checkpoint=torch.load('./models/model.pth')
 model.load_state_dict(checkpoint['model_state_dict'])
 classes = os.listdir("./input/car_data/car_data/train")
 mean=[0.485, 0.456, 0.406]
@@ -25,4 +25,4 @@ def predict(model, path, tranformsers, classes):
 
 # Supra is download.jpg
 predict(model, "C:/Users/Manjot Singh/Downloads/download.jpg", imagetransforms,  classes)
-
+print("exit")

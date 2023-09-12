@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <style>
 .header{
     display:flex;
-    background-color:#903749;
     padding-bottom: 25px;
 }
 body{
     margin: 0;
-    background-color:#903749
+    background: linear-gradient(270deg, rgb(66, 15, 20), rgb(197, 84, 94) 75%);
 }
 
 .content{
@@ -21,17 +21,16 @@ body{
 }
 
 
-.check{
-    padding-left: 10px;
+#pic{
     font-size: 40px;
 
 }
 
-.check::file-selector-button {
+#pic::file-selector-button {
   border: 2px solid #903749;
   padding: .2em .4em;
   border-radius: .2em;
-  background-color: gray;
+  background: linear-gradient(135deg, darkgrey, grey 75%);
   transition: 1s;
   color: white;
 }
@@ -45,7 +44,8 @@ body{
     border-color: white;
     
     position: fixed;
-  bottom: 0;
+
+  top: 0;
   right: 10px;
   padding: 20px;
   border-style: solid;
@@ -56,40 +56,56 @@ body{
     border: 2px solid #903749;
     padding: .2em .4em;
     border-radius: .2em;
-    background-color: gray;
+    background: linear-gradient(135deg, darkgrey, grey 75%);
     color: white;
     font-size: 45px;
 }
 
 #c{
     text-align-last: center;
-}
+    }
 
 #b{
     padding-bottom: 30px;
     border-radius: 50px;
-    height: 242px;
-    width: 400px;
+    height: auto;
+    width: 300px;
 }
+
+#b[src="#"]{
+    display: none;
+}
+ .logo{
+    height: 150px;
+ }
+
+
 </style>
 
 
 <html>
     <body>
         <div class="header">
-            <img src="c:\Users\Manjot Singh\Downloads\Color logo with background.png">
+            {% load static %}
+            <img class="logo" src="{% static 'cars/default.png' %}">
         </div>
         <div class="content">
                 <div id="c">
-                    <input id="imgInp" class="check" type="file" accept="image/jpeg" />
+                    <form  method ="POST" enctype="multipart/form-data" action="">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button class="upload"> Classify </button>
+                    </form>
                 </div>
                 <p class="dir">Upload a photo of a car (.JPG)</p>
                 <div id="c">
-                    <img id="b" src="#" alt="your image"  onerror="this.onerror=null; this.src='c:/Users/Manjot Singh/Downloads/pngegg.png'"/>
+                    {% load static %}
+                    <img id="b" src="#" alt="your image" />
                 </div>
-                <div id="c">
-                    <button class="upload"> Classify </button>
+                <div id ="c">
+                    {{prediction}}
                 </div>
+
         </div>
 
         <div>
@@ -97,8 +113,8 @@ body{
         </div>
     <script>
         
-        imgInp.onchange = evt => {
-            const [file] = imgInp.files
+        pic.onchange = evt => {
+            const [file] = pic.files
             if (file) {
                 b.src = URL.createObjectURL(file)
                     }

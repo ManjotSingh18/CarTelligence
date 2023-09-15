@@ -1,1 +1,1 @@
-web: gunicorn CarTelligence.wsgi
+web: gunicorn .wsgi

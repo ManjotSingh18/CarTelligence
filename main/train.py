@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 import time
 import torchvision
-from model import build_model
+from .basemodel import build_model
 from datasets import getdatasets, getdataloaders
 
 seed = 42

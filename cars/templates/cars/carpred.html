@@ -12,18 +12,12 @@ body{
     padding-bottom: 25px;
 }
 .foot{
-    font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    border-color: white;
-    
-    position: fixed;
+    padding-top: 5px;
 
-  top: 0;
-  right: 10px;
-  padding: 20px;
-  border-style: solid;
-  border-radius: 50px;
+    position: fixed;
+    top: 0;
+    right: 10px;
 }
 
 #b{
@@ -40,6 +34,17 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
 }
+.return{
+    border: 2px solid #903749;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background: linear-gradient(135deg, darkgrey, grey 75%);
+    color: white;
+    font-size: 45px;
+}
+.back{
+    text-align-last: center;
+}
 </style>
 
 <html>
@@ -53,9 +58,13 @@ body{
             <img id="b" src="{% get_media_prefix %}/cars/{{pico}}" alt="your image" />
             <p>{{car}}</p>
         </div>
+        <div class="back">
+                <form method="GET" action="" >
+                    <button class="return">Back</button>
+                </form>
+        </div>
         <div>
-
-            <p class="foot">About</p> 
+            <a href="https://github.com/ManjotSingh18"><img class="foot" src="{% static 'cars/github.png' %}" href></a>
         </div>
 
     </body>

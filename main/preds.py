@@ -26,7 +26,6 @@ def predict(model, path, tranformsers, classes):
     image = tranformsers(image).float()
     result = model(image.unsqueeze(0))
     _, think = torch.max(result.data, 1)
-    print(classes[think.item()])
     return str(classes[think.item()])
 # Supra is download.jpg
 

@@ -25,11 +25,15 @@ def home(request):
             instance.save()
             time.sleep(2)
             filename=os.listdir("./media/cars/")[0]
-            p=activate(f"./media/cars/{filename}")
-            return render(request, "cars/carpred.html", {"pico": filename, "car": p})
+            if filename[-3:] == "jpg":
+                p=activate(f"./media/cars/{filename}")
+                return render(request, "cars/carpred.html", {"pico": filename, "car": p})
+            else:
+                return render(request, "cars/landing.html", {"form": form, "prediction": "", "error": "File not .JPG"})
+
     else:
         form = CarForm(auto_id="Placer")
-        return render(request, "cars/landing.html", {"form": form, "prediction": ""})
+        return render(request, "cars/landing.html", {"form": form, "prediction": "", "error": ""})
 
 
 

@@ -9,10 +9,10 @@ import os
 from main import activate
 import time 
 import glob
-from django.views.decorators.csrf import csrf_protect 
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-@csrf_protect 
+@csrf_exempt
 def home(request):
     if request.method == "POST":
         form= CarForm(request.POST, auto_id="Placer")

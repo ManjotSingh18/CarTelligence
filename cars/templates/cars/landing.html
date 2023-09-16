@@ -64,8 +64,6 @@ body{
 #b{
     padding-bottom: 30px;
     border-radius: 50px;
-    height: auto;
-    width: 300px;
 }
 
 #b[src="#"]{
@@ -78,6 +76,9 @@ body{
 #erro{
     font-size: 30px;
 }
+.spacing{
+    padding-bottom: 2%;
+}
 </style>
 
 
@@ -87,6 +88,7 @@ body{
             {% load static %}
             <img class="logo" src="{% static 'cars/default.png' %}">
         </div>
+        <div class="spacing"></div>
         <div class="content">
             <div id ="c">
                 <p id="erro">{{error}}</p>

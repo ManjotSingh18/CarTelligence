@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ngvo!t&op07&p!3a3+3xk@eohd)r9ug=7prvqad$3)t!2t)vd!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["cartelligence-production.up.railway.app",'127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ["cartelligence.up.railway.app",'127.0.0.1', 'localhost']
 
 
 # Application definition

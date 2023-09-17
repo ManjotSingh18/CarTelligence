@@ -20,7 +20,12 @@ body{
     text-align: center;
 }
 
-
+.tip{
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
 #pic{
     font-size: 40px;
 
@@ -102,7 +107,9 @@ body{
                         <button class="upload"> Classify </button>
                     </form>
                 </div>
-                <p class="dir">Upload a photo of a car (.JPG)</p>
+                <p class="dir">Upload a photo of a car (.JPG) </p>
+                <p class="tip">(For best results wait 15 seconds after uploading to ensure picture is rendered)</p>
+
                 <div id="c">
                     {% load static %}
                     <img id="b" src="#" alt="your image" />

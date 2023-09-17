@@ -1,2 +1,2 @@
-static/*.js linguist-detectable=false
-static/*.css linguist-detectable=false
+static/admin/js/*.js linguist-detectable=false
+static/admin/css/*.css linguist-detectable=false

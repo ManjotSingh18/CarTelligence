@@ -1,0 +1,4 @@
+.Procfile
+.Pipfile.lock
+.gitattributes
+.Pipfile

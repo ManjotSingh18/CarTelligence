@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<style>
+
+body{
+    margin: 0;
+
+    background: linear-gradient(270deg, rgb(66, 15, 20), rgb(197, 84, 94) 75%);
+}
+
+.emessage{
+    text-align: center;
+    display:block;
+    margin: auto;
+    padding-top: 5%;
+    font-size: 50px;
+    color: white;
+}
+.return{
+    border: 2px solid #903749;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background: linear-gradient(135deg, darkgrey, grey 75%);
+    color: white;
+    font-size: 45px;
+}
+.back{
+    text-align: center;
+    padding-top: 2.5%;
+}
+.header{
+    display:flex;
+}
+.foot{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    position: fixed;
+    padding-top: 5px;
+  top: 0;
+  right: 10px;
+  
+}
+.logo{
+    height: 150px;
+ }
+
+</style>
+<html>
+    <body>
+        <div class="header">
+            {% load static %}
+            <img class="logo" src="{% static 'cars/default.png' %}">
+        </div>
+        <p class="emessage"> An error occured</p>
+        <div class="back">
+            <form method="GET" action="" >
+                <button class="return">Back</button>
+            </form>
+        </div>
+        <div>
+            <a href="https://github.com/ManjotSingh18"><img class="foot" src="{% static 'cars/github.png' %}" href></a>
+        </div>
+    </body>
+</html>

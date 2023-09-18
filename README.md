@@ -54,6 +54,8 @@ I utilized a pre-trained model built upon the ResNet-50 neural network. My choic
 * Implemented dynamic effects to the website including picture pop-ups and error message displays
 ## Stanford Car Dataset
 * Trained the model on a dataset consisting of 16,185 images of 196 cars with the models up to the year 2012, citations for dataset usage are provided below
+## Railway
+* Used to deploy application 
 
 # Local machine
 1. Ensure you have a Python interpreter of your choice installed.

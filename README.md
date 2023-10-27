@@ -18,6 +18,11 @@ I utilized a pre-trained model built upon the ResNet-50 neural network. My choic
 * Intuitive and easy-to-navigate website
 * Accessible on various mobile devices
 
+# Video Showcase
+<p align="center">
+<a href="https://www.youtube.com/watch?v=7zG4Jq6KUHk"><img src="https://img.youtube.com/vi/7zG4Jq6KUHk/maxresdefault.jpg" width="50%" height="auto"></a>
+</p>
+
 # Requirements 
 * A stable internet connections 
 * Any device capable of web browsing and uploading images
